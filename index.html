@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDIT - Acceso Restringido</title>
+    <!-- 1. Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 2. Fuente mono-espaciada para el look de "terminal" */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        /* 3. Animación de "shake" para contraseña incorrecta */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+            20%, 40%, 60%, 80% { transform: translateX(10px); }
+        }
+        .shake {
+            animation: shake 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300">
+
+    <!-- 
+      PÁGINA 1: LOGIN 
+      (Se ocultará al iniciar sesión)
+    -->
+    <div id="loginPage" class="flex flex-col items-center justify-center min-h-screen p-4">
+        <div class="w-full max-w-md p-8 space-y-6 bg-gray-800 rounded-lg shadow-xl">
+            <div class="text-center">
+                <h1 class="text-2xl font-bold text-green-400">ACCESO RESTRINGIDO</h1>
+                <p class="text-gray-400">Terminal Sótano-B | IDIT</p>
+            </div>
+            
+            <!-- Formulario de Login -->
+            <div class="space-y-4">
+                <div>
+                    <label for="username" class="block text-sm font-medium text-green-300">Usuario:</label>
+                    <input type="text" id="usernameInput" name="username"
+                           class="w-full px-3 py-2 mt-1 text-gray-200 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                           placeholder="Ingrese usuario...">
+                </div>
+                <div>
+                    <label for="password" class="block text-sm font-medium text-green-300">Clave de Anulación:</label>
+                    <input type="password" id="passwordInput" name="password"
+                           class="w-full px-3 py-2 mt-1 text-gray-200 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                           placeholder="Ingrese clave...">
+                </div>
+                
+                <button id="loginButton"
+                        class="w-full px-4 py-2 font-bold text-gray-900 bg-green-500 rounded-md hover:bg-green-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-colors">
+                    AUTENTICAR
+                </button>
+            </div>
+            
+            <!-- Mensaje de Error (oculto por defecto) -->
+            <div id="errorMessage" class="hidden text-center p-3 bg-red-800 border border-red-600 rounded-md">
+                <p class="font-bold text-red-300">ACCESO DENEGADO</p>
+                <p id="errorText" class="text-sm text-red-200">Usuario o clave incorrectos.</p>
+            </div>
+        </div>
+        <p class="mt-8 text-sm text-gray-600">IDIT Security Systems © 2025</p>
+    </div>
+
+    <!-- 
+      PÁGINA 2: ÉXITO 
+      (Oculta por defecto, se muestra al iniciar sesión)
+    -->
+    <div id="successPage" class="hidden flex flex-col items-center justify-center min-h-screen p-4 text-center">
+        <div class="space-y-6">
+            <h1 class="text-4xl font-bold text-green-400 animate-pulse">ACCESO AUTORIZADO</h1>
+            <p class="text-xl text-gray-200">Bienvenido, Dr. Cuervo.</p>
+            
+            <!-- Coordenadas -->
+            <div class="p-6 bg-gray-800 rounded-lg shadow-xl">
+                <h2 class="text-lg text-green-300">Coordenadas del Objetivo:</h2>
+                <p class="text-4xl font-bold text-white tracking-widest">
+                    19.032018, -98.240543
+                </p>
+            </div>
+            
+            <!-- Botón Gigante -->
+            <a id="giantButton"
+               href="https://www.google.com/maps?q=19.032018,-98.240543"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="inline-block px-12 py-8 mt-4 text-2xl font-bold text-white bg-red-600 rounded-lg shadow-lg transform hover:scale-105 transition-transform animate-pulse focus:outline-none focus:ring-4 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-900">
+                LOCALIZAR OBJETIVO
+            </a>
+
+                <a id="giantButton"
+               href="#"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="inline-block px-12 py-8 mt-4 text-2xl font-bold text-white bg-red-600 rounded-lg shadow-lg transform hover:scale-105 transition-transform animate-pulse focus:outline-none focus:ring-4 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-900">
+                ARMA PARA OBJETIVO
+            </a>
+        </div>
+    </div>
+
+
+    <!-- 
+      SCRIPT DE LÓGICA 
+    -->
+    <script>
+        // -----------------------------------------------------------------
+        // 
+        // ¡¡AQUÍ ESTÁ LA PISTA OCULTA PARA EL JUGADOR!!
+        // Esto aparecerá en la "Consola" del navegador (F12)
+        // 
+        // -----------------------------------------------------------------
+        
+        console.log("Sistema de seguridad IDIT: Protocolo 85-B activo.");
+        console.log("...Buscando en directorio interno...");
+        console.log("USUARIO: tech_support_B85");
+        console.log("Nota de Soporte: El Dr. Cuervo se quejó de que su 'código de pruebas' se hizo público. Irrelevante.");
+        console.log("...");
+        console.log("Error: La terminal está bloqueada. Imposible contactar a Soporte.");
+        console.log("Nota del sistema: El Dr. Cuervo es el único con anulación manual.");
+        console.log("Extensión del Doctor: ????");
+        
+        // --- ¡¡IMPORTANTE!! ---
+        // Reemplaza la siguiente línea con tu número de WhatsApp real.
+        console.log("Línea de emergencia (solo WhatsApp): +52 221 206 4428");
+        // -----------------------------------------------------------------
+
+
+        // Lógica de la página
+        
+        // 1. Referencias a los elementos
+        const loginPage = document.getElementById('loginPage');
+        const successPage = document.getElementById('successPage');
+        
+        const usernameInput = document.getElementById('usernameInput');
+        const passwordInput = document.getElementById('passwordInput');
+        const loginButton = document.getElementById('loginButton');
+        const errorMessage = document.getElementById('errorMessage');
+        const errorText = document.getElementById('errorText');
+        
+        const correctUsername = "tech_support_B85";
+        const correctPassword = "CorvusNoir4428";
+
+        // 2. Función para revisar las credenciales
+        function checkLogin() {
+            const enteredUsername = usernameInput.value;
+            const enteredPassword = passwordInput.value;
+            
+            if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
+                // Éxito
+                loginPage.classList.add('hidden');
+                successPage.classList.remove('hidden');
+            } else {
+                // Falla
+                let errorMsg = "Usuario o clave incorrectos.";
+                if (enteredUsername !== correctUsername) {
+                    errorMsg = "Error de autenticación de usuario.";
+                } else if (enteredPassword !== correctPassword) {
+                    errorMsg = "Clave de anulación incorrecta.";
+                }
+
+                passwordInput.value = ""; // Limpiar campo de contraseña
+                errorText.textContent = errorMsg; // Mostrar mensaje de error específico
+                errorMessage.classList.remove('hidden'); // Mostrar error
+                errorMessage.classList.add('shake'); // Sacudir
+                
+                // Quitar la animación después de que termine
+                setTimeout(() => {
+                    errorMessage.classList.remove('shake');
+                }, 500);
+            }
+        }
+
+        // 3. Asignar eventos
+        loginButton.addEventListener('click', checkLogin);
+        
+        // 4. Permitir presionar "Enter" para iniciar sesión (en ambos campos)
+        usernameInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                checkLogin();
+            }
+        });
+        
+        passwordInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); 
+                checkLogin();
+            }
+        });
+
+    </script>
+</body>
+</html>
