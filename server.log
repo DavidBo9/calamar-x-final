@@ -1,0 +1,20 @@
+[2025-10-30T03:45:01] [INFO] Iniciando corvus-node v1.0.0-legacy-B85
+[2025-10-30T03:45:01] [INFO] Cargando módulo 'chimera-interface'.
+[2025-10-30T03:45:02] [INFO] Intentando conectar con la base de datos de telemetría...
+[2025-10-30T03:45:03] [INFO] Conexión exitosa.
+[2025-10-30T03:45:03] [WARN] No se encontró el script 'run_B85.py'. Usando módulo de Node por defecto.
+[2025-10-30T03:45:03] [INFO] Cargando variables de entorno desde 'security.env'.
+[2025-10-30T03:45:03] [INFO] Variables cargadas.
+[2025-10-30T03:45:03] [INFO] Abriendo puerto en Terminal 4428.
+[2025-10-30T03:45:04] [ERROR] ¡¡FALLO DE AUTENTICACIÓN!! Terminal 4428 no responde.
+[2025-10-30T03:45:04] [INFO] Iniciando bucle de autenticación...
+[2025-10-30T03:45:07] [ERROR] Auth loop: Intento 1 fallido.
+[2025-10-30T03:45:10] [ERROR] Auth loop: Intento 2 fallido.
+[2025-10-30T03:45:13] [ERROR] Auth loop: Intento 3 fallido.
+[2025-10-30T03:45:13] [FATAL] El sistema está bloqueado. Bucle de autenticación infinito detectado.
+[2025-10-30T03:45:13] [INFO] Esperando anulación manual del Dr. Cuervo...
+[2025-10-30T03:45:16] [ERROR] Auth loop: Intento 4 fallido.
+[2025-10-30T03:45:19] [ERROR] Auth loop: Intento 5 fallido.
+[2025-10-30T03:45:22] [ERROR] Auth loop: Intento 6 fallido.
+[2025-10-30T03:45:22] [INFO] Esperando anulación manual del Dr. Cuervo
+
